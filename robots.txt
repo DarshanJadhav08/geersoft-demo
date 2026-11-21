@@ -1,0 +1,22 @@
+# robots.txt for GeerSoft IT Solutions (https://geersoft.in)
+# Maximized for Search Engine Optimization (Google, Bing, Applebot)
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /about.php
+Allow: /services_all.php
+Allow: /service-detail.php
+Allow: /portfolio.php
+Allow: /price.php
+Allow: /blogs.php
+Allow: /blog-details.php
+Allow: /contact.php
+
+# Disallow Private Internal APIs & Data Stores
+Disallow: /api/
+Disallow: /data/
+Disallow: /.git/
+
+# Crawl Delay & High-Priority Sitemap Directive
+Sitemap: https://geersoft.in/sitemap.xml

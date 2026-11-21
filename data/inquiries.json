@@ -1,0 +1,41 @@
+[
+    {
+        "reference": "REF-GS-20261020-3FFFFE",
+        "submitted_at": "2026-10-20T15:38:43+02:00",
+        "name": "Sandeep Shirke",
+        "email": "sandeep@example.com",
+        "phone": "+91 7822020118",
+        "company": "GeerSoft Partner Enterprise",
+        "service": "Website Development",
+        "budget": "Custom Budget",
+        "timeline": "Within 1–3 Months",
+        "message": "We are planning a comprehensive website redesign with modern AI integration and responsive architecture.",
+        "client_ip": "127.0.0.1"
+    },
+    {
+        "reference": "REF-GS-20261020-16710C",
+        "submitted_at": "2026-10-20T15:39:33+02:00",
+        "name": "Sandeep Shirke",
+        "email": "sandeep@example.com",
+        "phone": "+91 7822020118",
+        "company": "GeerSoft Partner Enterprise",
+        "service": "Website Development",
+        "budget": "Custom Budget",
+        "timeline": "Within 1–3 Months",
+        "message": "We are planning a comprehensive website redesign with modern AI integration and responsive architecture.",
+        "client_ip": "127.0.0.1"
+    },
+    {
+        "reference": "REF-GS-20261020-E2F098",
+        "submitted_at": "2026-10-20T15:39:53+02:00",
+        "name": "alert(\"XSS\")Alex Developer",
+        "email": "sandeep@example.com",
+        "phone": "+91 7822020118",
+        "company": "GeerSoft Partner Enterprise",
+        "service": "Website Development",
+        "budget": "Custom Budget",
+        "timeline": "Within 1–3 Months",
+        "message": "Test message with bold tags and links.",
+        "client_ip": "127.0.0.1"
+    }
+]

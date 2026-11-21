@@ -1,0 +1,1187 @@
+/**
+ * GeerSoft IT Solutions — Contact Us Page Specialized Stylesheet
+ * File: ai-contact.css
+ * Description: Dedicated styling for Contact 3D Hero, Communication Globe,
+ *              Glassmorphism Contact Cards, Secure Project Inquiry Form,
+ *              Process Roadmap Sidebar, FAQ Accordion, and Responsive Modes.
+ * Extends: ai-home.css design tokens & 10s multi-color theme engine
+ */
+
+/* ==========================================================================
+   1. Contact Hero: Floating Digital Globe & Communication Nodes
+   ========================================================================== */
+.contact-hero-composition {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 480px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central Digital Globe */
+.contact-globe-core {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--theme-accent-color) 0%, rgba(14, 23, 48, 0.95) 70%);
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 50px -10px var(--glow-color), inset 0 0 40px var(--glow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  animation: pulse-globe-glow 4s ease-in-out infinite alternate;
+  transition: background 1.2s ease, border-color 1.2s ease, box-shadow 1.2s ease;
+}
+
+@keyframes pulse-globe-glow {
+  0% {
+    box-shadow: 0 0 35px -10px var(--glow-color), inset 0 0 30px var(--glow-color);
+  }
+  100% {
+    box-shadow: 0 0 65px 5px var(--glow-color), inset 0 0 50px var(--glow-color);
+  }
+}
+
+/* Globe Latitude & Longitude Wireframe Rings */
+.globe-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.globe-ring-1 {
+  width: 216px;
+  height: 80px;
+  transform: rotateX(65deg);
+  border-color: var(--neon-cyan);
+  opacity: 0.7;
+  transition: border-color 1.2s ease;
+}
+
+.globe-ring-2 {
+  width: 80px;
+  height: 216px;
+  transform: rotateY(65deg);
+  border-color: var(--ai-violet);
+  opacity: 0.7;
+  transition: border-color 1.2s ease;
+}
+
+.globe-ring-3 {
+  width: 290px;
+  height: 290px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: spin-orbital-ring 25s linear infinite;
+  transition: border-color 1.2s ease;
+}
+
+@keyframes spin-orbital-ring {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Globe Inner Pulse Emblem */
+.globe-center-emblem {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--grad-ai);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
+  box-shadow: 0 10px 25px var(--btn-glow);
+  z-index: 3;
+  transition: background 1.2s ease, box-shadow 1.2s ease;
+}
+
+/* Floating Satellite Communication Nodes */
+.satellite-node {
+  position: absolute;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(14, 23, 48, 0.92) 0%, rgba(9, 15, 31, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 4;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.satellite-node:hover {
+  transform: scale(1.05) translateY(-4px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 20px 40px var(--glow-color);
+}
+
+.node-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.node-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.node-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neon-cyan);
+  transition: color 1.2s ease;
+}
+
+.node-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Satellite Positions & Animations */
+.node-email {
+  top: 30px;
+  left: 10px;
+  animation: float-node-1 6s ease-in-out infinite alternate;
+}
+.node-email .node-icon-circle {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+
+.node-phone {
+  bottom: 45px;
+  left: 20px;
+  animation: float-node-2 7s ease-in-out infinite alternate 0.5s;
+}
+.node-phone .node-icon-circle {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ai-violet);
+  border: 1px solid var(--ai-violet);
+}
+
+.node-whatsapp {
+  top: 70px;
+  right: 0;
+  animation: float-node-3 6.5s ease-in-out infinite alternate 1s;
+}
+.node-whatsapp .node-icon-circle {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.node-security {
+  bottom: 40px;
+  right: 15px;
+  animation: float-node-4 7.5s ease-in-out infinite alternate 1.5s;
+}
+.node-security .node-icon-circle {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+@keyframes float-node-1 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+@keyframes float-node-2 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+@keyframes float-node-3 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes float-node-4 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(12px); }
+}
+
+
+/* ==========================================================================
+   2. Contact Cards Section (Get in Touch with GeerSoft)
+   ========================================================================== */
+.contact-cards-section {
+  padding: 80px 0 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card-ai {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(14, 23, 48, 0.78) 0%, rgba(9, 15, 31, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-card-ai:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-glow);
+  box-shadow: 0 25px 60px -15px var(--glow-color);
+}
+
+.contact-card-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--neon-cyan);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.contact-card-ai:hover .contact-card-icon-wrap {
+  transform: scale(1.08);
+  background: var(--grad-ai);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px var(--btn-glow);
+}
+
+.contact-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.contact-card-display {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 10px;
+  word-break: break-word;
+  transition: color 0.25s ease;
+}
+
+.contact-card-ai:hover .contact-card-display {
+  color: #ffffff;
+}
+
+.contact-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.contact-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.contact-card-btn:hover {
+  background: var(--grad-ai);
+  border-color: transparent;
+  box-shadow: 0 6px 20px var(--btn-glow);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   3. Inquiry Form & Sidebar Section (Tell Us About Your Project)
+   ========================================================================== */
+.inquiry-section {
+  padding: 60px 0 100px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glassmorphism Form Container */
+.inquiry-form-card {
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(14, 23, 48, 0.88) 0%, rgba(9, 15, 31, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.form-label-ai {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-label-ai .req-mark {
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+.form-label-ai .opt-badge {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.form-control-ai,
+.form-select-ai {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: rgba(10, 16, 35, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.form-control-ai::placeholder {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.form-control-ai:focus,
+.form-select-ai:focus {
+  background: rgba(10, 16, 35, 0.95);
+  border-color: var(--border-glow);
+  box-shadow: 0 0 0 3px var(--glow-color);
+  color: #ffffff;
+}
+
+/* Custom Select Dropdown Options */
+.form-select-ai {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+.form-select-ai option {
+  background-color: #0b1220;
+  color: #ffffff;
+  padding: 10px;
+}
+
+textarea.form-control-ai {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* Validation Feedback Styles */
+.form-control-ai.is-invalid,
+.form-select-ai.is-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.form-control-ai.is-valid,
+.form-select-ai.is-valid {
+  border-color: #10b981 !important;
+}
+
+.invalid-feedback-ai {
+  display: none;
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.form-control-ai.is-invalid ~ .invalid-feedback-ai,
+.form-select-ai.is-invalid ~ .invalid-feedback-ai {
+  display: block;
+}
+
+/* Custom Checkbox */
+.form-check-ai {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0;
+}
+
+.form-check-ai input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(10, 16, 35, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease;
+}
+
+.form-check-ai input[type="checkbox"]:checked {
+  background: var(--grad-ai);
+  border-color: transparent;
+  box-shadow: 0 2px 10px var(--btn-glow);
+}
+
+.form-check-ai input[type="checkbox"]:checked::before {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.form-check-ai-text {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.form-check-ai-text a {
+  color: var(--neon-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Honeypot Field (Security bot trap, hidden from human visitors) */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Submit Button & Loading State */
+.btn-submit-inquiry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--grad-ai);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px var(--btn-glow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-inquiry:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--btn-glow);
+  color: #ffffff;
+}
+
+.btn-submit-inquiry:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn-submit-inquiry.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+.btn-submit-inquiry.is-loading .btn-text-content {
+  opacity: 0.8;
+}
+
+/* Server Feedback Alert Banners */
+.form-alert-banner {
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  display: none;
+  animation: fadeInDown 0.4s ease;
+}
+
+.form-alert-banner.alert-success-ai {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #ecfdf5;
+}
+
+.form-alert-banner.alert-danger-ai {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fef2f2;
+}
+
+.alert-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.alert-icon {
+  font-size: 1.4rem;
+}
+
+.alert-success-ai .alert-icon {
+  color: #10b981;
+}
+
+.alert-danger-ai .alert-icon {
+  color: #ef4444;
+}
+
+.alert-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: inherit;
+}
+
+.alert-body-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.alert-ref-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   4. Sidebar: Process Roadmap & Client Privacy Reassurance
+   ========================================================================== */
+.contact-sidebar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-box-ai {
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(14, 23, 48, 0.75) 0%, rgba(9, 15, 31, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-title i {
+  color: var(--neon-cyan);
+}
+
+/* Roadmap Process List */
+.process-roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.process-roadmap-list::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  bottom: 25px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-violet), rgba(255, 255, 255, 0.1));
+}
+
+.roadmap-step-item {
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 22px;
+}
+
+.roadmap-step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-num-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0b1220;
+  border: 2px solid var(--border-glow);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px var(--glow-color);
+  z-index: 2;
+}
+
+.step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Privacy Guarantee Card */
+.privacy-feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.privacy-feature-row:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-feature-icon {
+  font-size: 1.15rem;
+  color: #10b981;
+  margin-top: 1px;
+}
+
+.privacy-feature-text {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+/* Quick Hotline Callout */
+.sidebar-hotline-card {
+  border-radius: 16px;
+  padding: 20px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hotline-info h6 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.hotline-info p {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  margin: 0;
+}
+
+.btn-hotline-call {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-hotline-call:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   5. Direct Contact Actions (Need Another Way to Reach Us?)
+   ========================================================================== */
+.direct-actions-section {
+  padding: 40px 0 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.direct-action-card {
+  position: relative;
+  height: 100%;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(14, 23, 48, 0.6) 0%, rgba(9, 15, 31, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.direct-action-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-glow);
+  box-shadow: 0 15px 35px var(--glow-color);
+}
+
+.direct-action-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.direct-action-card:hover .direct-action-icon {
+  background: var(--grad-ai);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.direct-action-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.direct-action-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.direct-action-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--neon-cyan);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.direct-action-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   6. Conceptual AI Integration Section (Explore Smarter Ways to Connect)
+   ========================================================================== */
+.ai-connect-section {
+  padding: 70px 0;
+  background: radial-gradient(circle at center, rgba(14, 23, 48, 0.6) 0%, rgba(2, 6, 23, 0.95) 100%);
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ai-connect-box {
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(14, 23, 48, 0.9) 0%, rgba(9, 15, 31, 0.95) 100%);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 25px 60px -15px var(--glow-color);
+  padding: 48px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.ai-pillar-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 6px;
+  transition: all 0.25s ease;
+}
+
+.ai-pillar-pill i {
+  color: var(--neon-cyan);
+}
+
+.ai-pillar-pill:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   7. Accessible FAQ Accordion Section
+   ========================================================================== */
+.faq-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.accordion-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-contact-item {
+  border-radius: 16px !important;
+  background: linear-gradient(145deg, rgba(14, 23, 48, 0.7) 0%, rgba(9, 15, 31, 0.88) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-contact-item:has(.accordion-button:not(.collapsed)) {
+  border-color: var(--border-glow) !important;
+  box-shadow: 0 15px 35px var(--glow-color) !important;
+}
+
+.accordion-contact-item .accordion-header {
+  margin: 0;
+}
+
+.accordion-contact-item .accordion-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  padding: 20px 24px !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.accordion-contact-item .accordion-button::after {
+  filter: invert(1) brightness(2);
+  transition: transform 0.3s ease;
+}
+
+.accordion-contact-item .accordion-body {
+  padding: 0 24px 22px 24px !important;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   8. Responsive Adjustments (Desktop, Tablet, Mobile)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .contact-hero-composition {
+    max-width: 420px;
+    height: 400px;
+    margin-top: 20px;
+  }
+
+  .contact-globe-core {
+    width: 180px;
+    height: 180px;
+  }
+
+  .globe-ring-1 {
+    width: 176px;
+    height: 65px;
+  }
+
+  .globe-ring-2 {
+    width: 65px;
+    height: 176px;
+  }
+
+  .inquiry-form-card {
+    padding: 30px 24px;
+  }
+
+  .ai-connect-box {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-hero-composition {
+    max-width: 320px;
+    height: 340px;
+  }
+
+  .contact-globe-core {
+    width: 140px;
+    height: 140px;
+  }
+
+  .globe-center-emblem {
+    width: 54px;
+    height: 54px;
+    font-size: 1.4rem;
+  }
+
+  .satellite-node {
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .node-icon-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .node-label {
+    font-size: 0.65rem;
+  }
+
+  .node-value {
+    font-size: 0.75rem;
+  }
+
+  .node-email {
+    top: 10px;
+    left: 0;
+  }
+
+  .node-whatsapp {
+    top: 40px;
+    right: 0;
+  }
+
+  .node-phone {
+    bottom: 25px;
+    left: 0;
+  }
+
+  .node-security {
+    bottom: 25px;
+    right: 0;
+  }
+
+  .inquiry-form-card {
+    padding: 24px 16px;
+  }
+
+  .contact-card-ai {
+    padding: 26px 20px;
+  }
+}
+
+
+/* ==========================================================================
+   9. High-Contrast Light Mode Overrides
+   ========================================================================== */
+body[data-mode="light"] .contact-globe-core {
+  background: radial-gradient(circle at 35% 35%, rgba(37, 99, 235, 0.15) 0%, #ffffff 80%);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+body[data-mode="light"] .satellite-node {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body[data-mode="light"] .node-value {
+  color: #0f172a;
+}
+
+body[data-mode="light"] .contact-card-ai,
+body[data-mode="light"] .sidebar-box-ai,
+body[data-mode="light"] .inquiry-form-card,
+body[data-mode="light"] .direct-action-card,
+body[data-mode="light"] .ai-connect-box {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+body[data-mode="light"] .contact-card-title,
+body[data-mode="light"] .sidebar-title,
+body[data-mode="light"] .step-title,
+body[data-mode="light"] .direct-action-title,
+body[data-mode="light"] .form-label-ai,
+body[data-mode="light"] .hotline-info h6 {
+  color: #0f172a;
+}
+
+body[data-mode="light"] .contact-card-desc,
+body[data-mode="light"] .step-desc,
+body[data-mode="light"] .direct-action-desc,
+body[data-mode="light"] .privacy-feature-text,
+body[data-mode="light"] .form-check-ai-text {
+  color: #475569;
+}
+
+body[data-mode="light"] .form-control-ai,
+body[data-mode="light"] .form-select-ai {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body[data-mode="light"] .form-select-ai option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+body[data-mode="light"] .form-check-ai input[type="checkbox"] {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+body[data-mode="light"] .contact-card-btn {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+
+body[data-mode="light"] .accordion-contact-item {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body[data-mode="light"] .accordion-contact-item .accordion-button {
+  color: #0f172a !important;
+}
+
+body[data-mode="light"] .accordion-contact-item .accordion-button::after {
+  filter: none;
+}
+
+body[data-mode="light"] .step-num-badge {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body[data-mode="light"] .ai-pillar-pill {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}

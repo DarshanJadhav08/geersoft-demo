@@ -1,0 +1,90 @@
+# =========================================================================
+# GeerSoft IT Solutions — Production Apache Configuration (.htaccess)
+# Engineered for Top #1 Google Ranking, Core Web Vitals & Bank-Grade Security
+# =========================================================================
+
+# 1. URL Rewriting & Clean Navigation Routing
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Route /services or /services/ to services_all.php
+    RewriteRule ^services/?$ services_all.php [L,QSA]
+
+    # Route /blog or /blog/ to blogs.php
+    RewriteRule ^blog/?$ blogs.php [L,QSA]
+
+    # Route individual service: /services/slug to service-detail.php?slug=slug
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+
+    # Route individual blog article: /blog/slug or /blogs/slug to blog-details.php?slug=slug
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^blogs?/([a-zA-Z0-9_-]+)/?$ blog-details.php?slug=$1 [L,QSA]
+
+    # Route clean URLs without .php extension (e.g. /about -> about.php)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^.]+)$ $1.php [L,QSA]
+</IfModule>
+
+# 2. Gzip / Deflate Compression (Google PageSpeed 100/100)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# 3. Browser Caching & Expiry Directives (Core Web Vitals Optimization)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Images & Media
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Web Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+</IfModule>
+
+# 4. Enterprise Security & Privacy Headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+</IfModule>
+
+# 5. Prevent Access to Hidden Files & Sensitive Assets
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+<FilesMatch "(^#.*#|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

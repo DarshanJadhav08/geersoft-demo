@@ -1,0 +1,112 @@
+{
+    "1": {
+        "title": "Luxury E-Commerce Platforms",
+        "description": "A high-end online store with custom CMS, AR product preview, and seamless payment integration.",
+        "image": "product-1.jpg",
+        "tag_left": "Web Development",
+        "tag_right": "Fashion",
+        "features": [
+            "Real-time transaction monitoring",
+            "AI fraud detection",
+            "Multi-level authentication",
+            "Custom reporting dashboard"
+        ],
+        "tech_stack": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe"
+        ],
+        "users": "100k+ Active",
+        "uptime": "99.99%",
+        "certified": "PCI-DSS Compliant"
+    },
+    "2": {
+        "title": "FinTech Analytics Dashboard",
+        "description": "Enterprise-grade analytics dashboard with real-time financial insights, role-based access, and secure data pipelines.",
+        "image": "product-2.jpg",
+        "tag_left": "Software Engineering",
+        "tag_right": "FinTech",
+        "features": [
+            "Sub-second market telemetry updates",
+            "Role-based multi-tier security",
+            "Automated financial statement export",
+            "Cloud-native encrypted data storage"
+        ],
+        "tech_stack": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "AWS"
+        ],
+        "users": "Enterprise Users",
+        "uptime": "99.98%",
+        "certified": "SOC-2 Ready"
+    },
+    "3": {
+        "title": "Complete Brand Identity Suite",
+        "description": "End-to-end branding solution including logo design, brand guidelines, and digital assets for a fast-growing startup.",
+        "image": "product-3.jpg",
+        "tag_left": "Branding & Design",
+        "tag_right": "Startup",
+        "features": [
+            "Vector responsive design system",
+            "Comprehensive brand typography handbook",
+            "High-resolution social media marketing kits",
+            "Print & web export packaging"
+        ],
+        "tech_stack": [
+            "Illustrator",
+            "Photoshop",
+            "Figma"
+        ],
+        "users": "Global Launch",
+        "uptime": "100% Vector",
+        "certified": "Brand Approved"
+    },
+    "4": {
+        "title": "UI/UX Design System",
+        "description": "Scalable design system with reusable components, accessibility standards, and responsive layouts.",
+        "image": "product-4.jpg",
+        "tag_left": "UI/UX Design",
+        "tag_right": "SaaS",
+        "features": [
+            "WCAG 2.1 AAA Accessibility Compliance",
+            "Automated Figma tokens and Storybook sync",
+            "Light/Dark multi-theme primitives",
+            "Comprehensive interaction documentation"
+        ],
+        "tech_stack": [
+            "Figma",
+            "Storybook",
+            "Design Tokens",
+            "React"
+        ],
+        "users": "SaaS Platform",
+        "uptime": "WCAG Ready",
+        "certified": "AAA Accessible"
+    },
+    "5": {
+        "title": "Cloud-Based IT Infrastructure",
+        "description": "Robust IT solution with cloud migration, automated backups, monitoring, and enterprise-level security.",
+        "image": "product-5.jpg",
+        "tag_left": "IT Solutions",
+        "tag_right": "Cloud & DevOps",
+        "features": [
+            "Zero-downtime multi-region cloud migration",
+            "Automated hourly snapshot backup pipelines",
+            "Containerized Docker & Kubernetes clustering",
+            "Infrastructure as Code via Terraform"
+        ],
+        "tech_stack": [
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "Terraform"
+        ],
+        "users": "High-Availability",
+        "uptime": "99.99%",
+        "certified": "AWS Partner"
+    }
+}
